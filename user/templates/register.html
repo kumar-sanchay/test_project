@@ -1,0 +1,15 @@
+{% extends 'base/base.html' %}
+
+{% block title %}Register{% endblock title%}
+
+{% block body %}
+    {% if error %}
+        <p>{{ error }}</p>
+    {% endif %}
+    <br>
+    <form method="post" action=".">
+        {{ form.as_p }}
+        {% csrf_token %}
+        <button type="submit">Register</button>
+    </form>
+{% endblock body %}
